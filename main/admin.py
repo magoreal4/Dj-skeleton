@@ -1,4 +1,9 @@
 from django.contrib import admin
-from .models import Principal
 
-admin.site.register(Principal)
+from solo.admin import SingletonModelAdmin
+from main.models import SiteConfiguration
+
+
+admin.site.register(SiteConfiguration, SingletonModelAdmin)
+
+

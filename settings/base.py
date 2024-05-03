@@ -5,7 +5,7 @@ import os
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = Path(__file__).resolve().parent.parent.parent
+BASE_DIR = Path(__file__).resolve().parent.parent
 
 load_dotenv(Path.joinpath(BASE_DIR, '.env'))
 
@@ -24,8 +24,11 @@ INSTALLED_APPS = [
     # 'django.contrib.sites',
 
     'main',
+    
     'tailwind',
     'theme',
+    'solo',
+    'svg',
 ]
 
 MIDDLEWARE = [
@@ -47,7 +50,7 @@ TAILWIND_APP_NAME = 'theme'
 
 TAILWIND_CSS_PATH = 'css/main.css'
 
-ROOT_URLCONF = 'config.urls'
+ROOT_URLCONF = 'settings.urls'
 
 TEMPLATES = [
     {
@@ -65,7 +68,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'config.wsgi.application'
+WSGI_APPLICATION = 'settings.wsgi.application'
 
 
 # Password validation
@@ -109,6 +112,10 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'),]
 MEDIA_URL = '/media/'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
+
+SVG_DIRS=[
+    os.path.join(BASE_DIR, 'media/svg')
+]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field

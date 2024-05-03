@@ -1,5 +1,5 @@
 {
-    "peacock.remoteColor": "#61dafb",
+    "peacock.remoteColor": "#f9e64f",
     "CodeGPT.apiKey": "CodeGPT Plus Beta",
     "workbench.colorCustomizations": {
         "activityBar.activeBackground": "#fbed80",
@@ -20,5 +20,5 @@
         "titleBar.inactiveBackground": "#f9e64f99",
         "titleBar.inactiveForeground": "#15202b99"
     },
-    "peacock.color": "#f9e64f"
+    "peacock.color": "#61dafb"
 }

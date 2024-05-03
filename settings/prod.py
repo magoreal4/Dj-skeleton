@@ -1,6 +1,6 @@
 import os
 from .base import *
-from config.logging import *
+from settings.logging import *
 
 
 DEBUG = False

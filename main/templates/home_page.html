@@ -1,12 +1,9 @@
 
 
 {% extends "base.html" %}
-{% load static %}
+{% load static solo_tags %}
 
 {% block css %}
-{% comment %} <link rel="stylesheet" href="{% static './leaflet/leaflet.css' %}" />
-<link rel="stylesheet" href="{% static './leaflet/MarkerCluster.css' %}" />
-<link rel="stylesheet" href="{% static './leaflet/MarkerCluster.Default.css' %}" /> {% endcomment %}
 {% endblock css %}
 
 {% block body_class %}bg-yellow-500{% endblock %}
@@ -17,17 +14,8 @@
     
 {% block content %} 
 <div class="bg-yellow-200 mt-28  "> 
-Hola como estas
-Aqui van las imagenes 
-
-
-{% for img in imagenes %}
-<img src="{{ img.imagen.url }}" alt="Imagen destacada" class="h-48 object-cover">
-
-<li>{{ img.imagen.url }} - {{ img.description }}</li>
-{% endfor %}
-
-
+	{% get_solo 'main.SiteConfiguration' as main_config %}
+	{{ main_config.site_name }}    
 
 </div>
 
@@ -37,7 +25,7 @@ Aqui van las imagenes
  
 {% endblock content %}
 
-{% block extra_js %}
+{% block inline_javascript %}
 <script type="text/javascript">
 	var auth = "{{request.user.is_authenticated}}";
 	var static_url = "{% get_static_prefix %}";
@@ -49,7 +37,9 @@ Aqui van las imagenes
 
   </script>
 
+  {% endblock inline_javascript %}
 
+	{% block js %}
 {% comment %} <script type="text/javascript" src="{% static './js/main.js' %}"></script> {% endcomment %}
+	{% endblock js %}
 
-{% endblock extra_js %}
