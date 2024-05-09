@@ -22,13 +22,16 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     # 'django.contrib.sites',
-
-    'main',
     
+    'corsheaders',
+    'rest_framework',
     'tailwind',
     'theme',
     'solo',
     'svg',
+    'coreapi',
+    
+    'main',
 ]
 
 MIDDLEWARE = [
@@ -36,7 +39,9 @@ MIDDLEWARE = [
     
     "whitenoise.middleware.WhiteNoiseMiddleware",
     
+    
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -122,4 +127,9 @@ SVG_DIRS=[
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-# APPEND_SLASH = True
+REST_FRAMEWORK = {
+    'DEFAULT_SCHEMA_CLASS': 'rest_framework.schemas.coreapi.AutoSchema'
+}
+
+CORS_ALLOWED_ORIGINS = [
+]

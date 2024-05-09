@@ -1,0 +1,3 @@
+proyecto="chatwapp"
+dominio="chat.pozosscz.com"
+puerto=8898
